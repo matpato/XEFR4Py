@@ -28,7 +28,7 @@
 [//]: # (    <img src="images/logo.png" alt="Logo" width="80" height="80">)
 [//]: # (  </a>)
 
-<h3 align="center">Enhanced Essemble Feature Selection</h3>
+<h3 align="center">eXplainable Ensemble Feature Ranking</h3>
 
 [//]: # (  <p align="center">)
 
@@ -205,7 +205,7 @@ Project Link: [https://github.com/matpato/XEFR4Py](https://github.com/matpato/XE
 
 </br>To cite the work, please use the following text:</br>
 Amorim, D.; Pato, M. & Datia, N.</br>
-EEFR: Enhanced Ensemble Feature Ranking </br>
+XEFR: eXplainable Ensemble Feature Ranking </br>
 
 
 <p>(<a href="#top">back to top</a>)</p>
