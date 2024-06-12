@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPainter, QResizeEvent
 from PyQt5.QtWidgets import QGraphicsView
 
-from eefr.knowledge_viewer.Page.BlockDiagram import BlockDiagramScene
+from eefr.knowledge_viewer.pages.block_diagram import BlockDiagramScene
 
 """
 This class is used to create a view for the block diagram.

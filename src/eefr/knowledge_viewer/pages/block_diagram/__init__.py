@@ -1,0 +1,6 @@
+from eefr.knowledge_viewer.pages.block_diagram.Arrow import Arrow
+from eefr.knowledge_viewer.pages.block_diagram.BlockDiagramScene import BlockDiagramScene
+from eefr.knowledge_viewer.pages.block_diagram.BlockDiagramView import BlockDiagramView
+from eefr.knowledge_viewer.pages.block_diagram.ButtonClassBlock import ButtonClassBlock
+from eefr.knowledge_viewer.pages.block_diagram.ClassBlock import ClassBlock
+

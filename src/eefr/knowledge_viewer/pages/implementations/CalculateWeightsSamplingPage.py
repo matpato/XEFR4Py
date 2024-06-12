@@ -5,8 +5,8 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QPushButton, QTableView, QSizePolicy, QSpacerItem
 from pandas import DataFrame
 
-from eefr.knowledge_viewer.Page.ChildPage import ChildPage
-from eefr.knowledge_viewer.PandasTableView import PandasTableView
+from eefr.knowledge_viewer.pages.ChildPage import ChildPage
+from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
 from Utils import get_list_from_str
 
 """

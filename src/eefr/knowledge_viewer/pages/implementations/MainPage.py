@@ -1,9 +1,9 @@
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
 
-from eefr.knowledge_viewer.Page.BlockDiagram import BlockDiagramView, BlockDiagramScene
-from eefr.knowledge_viewer.Page.BlockDiagram.Implementation import MainBlockDiagramScene
-from eefr.knowledge_viewer.Page.BasePageWithBlockDiagram import BasePageWithBlockDiagram
+from eefr.knowledge_viewer.pages.block_diagram import BlockDiagramView, BlockDiagramScene
+from eefr.knowledge_viewer.pages.block_diagram.implementations import MainBlockDiagramScene
+from eefr.knowledge_viewer.pages.BasePageWithBlockDiagram import BasePageWithBlockDiagram
 
 """
 This class is the main page of the application.

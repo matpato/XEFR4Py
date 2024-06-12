@@ -2,9 +2,9 @@ import function
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
 
-from eefr.knowledge_viewer.Page.BlockDiagram import BlockDiagramView
-from eefr.knowledge_viewer.Page.BasePageWithBlockDiagram import BasePageWithBlockDiagram
-from eefr.knowledge_viewer.Page.ChildPage import ChildPage
+from eefr.knowledge_viewer.pages.block_diagram import BlockDiagramView
+from eefr.knowledge_viewer.pages.BasePageWithBlockDiagram import BasePageWithBlockDiagram
+from eefr.knowledge_viewer.pages.ChildPage import ChildPage
 
 """
 ChildPageWithBlockDiagram is a base class for pages that have a block diagram 

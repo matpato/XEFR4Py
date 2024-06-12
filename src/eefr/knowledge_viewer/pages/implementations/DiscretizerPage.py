@@ -8,8 +8,8 @@ from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from pandas import DataFrame
 
-from eefr.knowledge_viewer.Page.ChildPage import ChildPage
-from eefr.knowledge_viewer.PandasTableView import PandasTableView
+from eefr.knowledge_viewer.pages.ChildPage import ChildPage
+from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
 
 """
 This class is a child page that displays the results of the discretizer.

@@ -1,0 +1,3 @@
+from eefr.knowledge_viewer.pages.block_diagram.implementations.EnsembleFeatureRankingBlockDiagramScene import \
+    EnsembleFeatureRankingBlockDiagramScene
+from eefr.knowledge_viewer.pages.block_diagram.implementations.MainBlockDiagramScene import MainBlockDiagramScene

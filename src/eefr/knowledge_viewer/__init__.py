@@ -4,15 +4,8 @@ from PyQt5.QtCore import Qt, QMargins
 from PyQt5.QtGui import QFont, QResizeEvent
 from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QStackedWidget, QVBoxLayout
 
-from eefr.knowledge_viewer.Page.BasePage import BasePage
-from eefr.knowledge_viewer.Page.implementations.CalculateRankSamplingPage import CalculateRankSamplingPage
-from eefr.knowledge_viewer.Page.implementations.CalculateWeightsSamplingPage import CalculateWeightsSamplingPage
-from eefr.knowledge_viewer.Page.implementations.ConstructorPage import ConstructorPage
-from eefr.knowledge_viewer.Page.implementations.DiscretizerPage import DiscretizerPage
-from eefr.knowledge_viewer.Page.implementations.EnsembleFeatureRankingPage import EnsembleFeatureRankingPage
-from eefr.knowledge_viewer.Page.implementations.GetNRandomRowsSubsetsPage import GetNRandomRowsSubsetsPage
-from eefr.knowledge_viewer.Page.implementations.MainPage import MainPage
-from eefr.knowledge_viewer.Page.implementations.MetricPage import MetricPage
+from eefr.knowledge_viewer.pages.implementations import *
+from eefr.knowledge_viewer.pages import BasePage
 from Utils import get_list_from_str
 
 """

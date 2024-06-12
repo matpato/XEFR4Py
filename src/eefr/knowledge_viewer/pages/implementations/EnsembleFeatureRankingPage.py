@@ -5,10 +5,10 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QTableView
 from pandas import DataFrame
 
-from eefr.knowledge_viewer.Page.BlockDiagram import BlockDiagramView, BlockDiagramScene
-from eefr.knowledge_viewer.Page.BlockDiagram.Implementation import EnsembleFeatureRankingBlockDiagramScene
-from eefr.knowledge_viewer.Page import ChildPageWithBlockDiagram
-from eefr.knowledge_viewer.PandasTableView import PandasTableView
+from eefr.knowledge_viewer.pages.block_diagram.implementations import EnsembleFeatureRankingBlockDiagramScene
+from eefr.knowledge_viewer.pages.block_diagram import BlockDiagramView, BlockDiagramScene
+from eefr.knowledge_viewer.pages.table import PandasTableView
+from eefr.knowledge_viewer.pages import ChildPageWithBlockDiagram
 
 """
 This class is a child page that displays the blocks diagram of the ensemble feature ranking.

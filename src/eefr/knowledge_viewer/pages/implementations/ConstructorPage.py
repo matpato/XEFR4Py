@@ -5,8 +5,8 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QPushButton, QTableView, QSpacerItem, QSizePolicy
 from pandas import DataFrame
 
-from eefr.knowledge_viewer.Page.ChildPage import ChildPage
-from eefr.knowledge_viewer.PandasTableView import PandasTableView
+from eefr.knowledge_viewer.pages.ChildPage import ChildPage
+from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
 
 """
 This class is a child page that displays the results of the constructor.

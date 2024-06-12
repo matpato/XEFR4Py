@@ -2,7 +2,7 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QTableView, QTableWidget, QWidget
 from pandas import DataFrame
 
-from eefr.knowledge_viewer.PandasModel import PandasModel
+from eefr.knowledge_viewer.pages.table.PandasModel import PandasModel
 
 """
 PanadasTableView is a class that extends QTableView and is used to display a pandas DataFrame in a table.

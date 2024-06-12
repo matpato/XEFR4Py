@@ -2,7 +2,7 @@ import function
 from PyQt5.QtGui import QColor, QFont, QPen
 from PyQt5.QtWidgets import QGraphicsSceneMouseEvent, QGraphicsSceneHoverEvent
 
-from eefr.knowledge_viewer.Page.BlockDiagram.ClassBlock import ClassBlock, PEN_COLOR, BRUSH_COLOR
+from eefr.knowledge_viewer.pages.block_diagram.ClassBlock import ClassBlock, PEN_COLOR, BRUSH_COLOR
 
 """
 ClassBlock with a function that is called when the button is clicked.

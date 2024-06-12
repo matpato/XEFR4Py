@@ -1,8 +1,8 @@
 import function
 from PyQt5.QtGui import QFont
 
-from eefr.knowledge_viewer.Page.BlockDiagram import ButtonClassBlock, Arrow, BlockDiagramScene
-from eefr.knowledge_viewer.Page.BlockDiagram.BlockDiagramScene import LINE_THICKNESS
+from eefr.knowledge_viewer.pages.block_diagram import ButtonClassBlock, Arrow, BlockDiagramScene
+from eefr.knowledge_viewer.pages.block_diagram.BlockDiagramScene import LINE_THICKNESS
 
 
 """

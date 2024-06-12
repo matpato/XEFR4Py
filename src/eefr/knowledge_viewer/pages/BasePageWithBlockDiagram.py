@@ -2,8 +2,8 @@ import function
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
 
-from eefr.knowledge_viewer.Page.BlockDiagram import BlockDiagramView
-from eefr.knowledge_viewer.Page.BasePage import BasePage
+from eefr.knowledge_viewer.pages.block_diagram import BlockDiagramView
+from eefr.knowledge_viewer.pages.BasePage import BasePage
 
 """
 BasePageWithBlockDiagram is a base class for pages that have a block diagram.

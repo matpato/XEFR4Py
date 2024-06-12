@@ -3,7 +3,7 @@ from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QPushButton
 
-from eefr.knowledge_viewer.Page.BasePage import BasePage
+from eefr.knowledge_viewer.pages.BasePage import BasePage
 
 """
 This class is a child of BasePage. 
