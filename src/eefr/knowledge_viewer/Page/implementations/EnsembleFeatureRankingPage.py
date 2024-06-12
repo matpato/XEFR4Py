@@ -5,10 +5,9 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QTableView
 from pandas import DataFrame
 
-from eefr.knowledge_viewer.BlockDiagram import BlockDiagramView, BlockDiagramScene
-from eefr.knowledge_viewer.BlockDiagram.Implementation.EnsembleFeatureRankingBlockDiagramScene import \
-    EnsembleFeatureRankingBlockDiagramScene
-from eefr.knowledge_viewer.Page.ChildPageWithBlockDiagram import ChildPageWithBlockDiagram
+from eefr.knowledge_viewer.Page.BlockDiagram import BlockDiagramView, BlockDiagramScene
+from eefr.knowledge_viewer.Page.BlockDiagram.Implementation import EnsembleFeatureRankingBlockDiagramScene
+from eefr.knowledge_viewer.Page import ChildPageWithBlockDiagram
 from eefr.knowledge_viewer.PandasTableView import PandasTableView
 
 """

@@ -1,5 +1,3 @@
-import sys
-
 import function
 import pandas
 from PyQt5.QtCore import Qt, QMargins

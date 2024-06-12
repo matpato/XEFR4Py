@@ -2,7 +2,7 @@ from PyQt5.QtCore import Qt, QPoint
 from PyQt5.QtGui import QPen, QPolygonF
 from PyQt5.QtWidgets import QGraphicsPolygonItem, QGraphicsLineItem
 
-from eefr.knowledge_viewer.BlockDiagram.ClassBlock import ClassBlock
+from eefr.knowledge_viewer.Page.BlockDiagram.ClassBlock import ClassBlock
 
 LINE_THICKNESS: int = 3
 

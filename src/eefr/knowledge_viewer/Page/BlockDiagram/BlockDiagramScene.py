@@ -2,7 +2,7 @@ import function
 from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QGraphicsScene
 
-from eefr.knowledge_viewer.BlockDiagram import ClassBlock
+from eefr.knowledge_viewer.Page.BlockDiagram import ClassBlock
 
 """
 This abstract class is used to create a scene for the block diagram.

@@ -1,8 +1,8 @@
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
 
-from eefr.knowledge_viewer.BlockDiagram import BlockDiagramView, BlockDiagramScene
-from eefr.knowledge_viewer.BlockDiagram.Implementation.MainBlockDiagramScene import MainBlockDiagramScene
+from eefr.knowledge_viewer.Page.BlockDiagram import BlockDiagramView, BlockDiagramScene
+from eefr.knowledge_viewer.Page.BlockDiagram.Implementation import MainBlockDiagramScene
 from eefr.knowledge_viewer.Page.BasePageWithBlockDiagram import BasePageWithBlockDiagram
 
 """
