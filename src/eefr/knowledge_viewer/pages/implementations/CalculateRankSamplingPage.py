@@ -3,7 +3,7 @@ import mplcursors
 import pandas
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QTableView, QSpinBox, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QSpinBox, QLabel, QHBoxLayout, QSpacerItem, QSizePolicy
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from pandas import DataFrame
@@ -33,7 +33,7 @@ BAR_COLOR: str = 'tab:blue'
 class CalculateRankSamplingPage(ChildPage):
     _diagram: FigureCanvasQTAgg
     _diagram_info: DataFrame
-    _table_info: QTableView
+    _table_info: PandasTableView
 
     def __init__(self, font: QFont, margins: QMargins, button_parent_func: function) -> None:
         super().__init__(font, margins, 'Calculate Rank Sampling', button_parent_func)

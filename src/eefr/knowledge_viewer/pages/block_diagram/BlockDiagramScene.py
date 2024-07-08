@@ -4,15 +4,15 @@ from PyQt5.QtWidgets import QGraphicsScene
 
 from eefr.knowledge_viewer.pages.block_diagram import ClassBlock
 
-"""
-This abstract class is used to create a scene for the block diagram.
-Every scene must implement the update_layout and inject_funcs method.
-"""
 
 LINE_THICKNESS: int = 3
 
 
 class BlockDiagramScene(QGraphicsScene):
+    """
+    This abstract class is used to create a scene for the block diagram.
+    Every scene must implement the update_layout and inject_funcs method.
+    """
     _line_thickness: int
     _font: QFont
 
@@ -20,6 +20,12 @@ class BlockDiagramScene(QGraphicsScene):
     _blocks: list[ClassBlock]
 
     def __init__(self, font: QFont, line_thickness: int = LINE_THICKNESS) -> None:
+        """
+        Constructor of the BlockDiagramScene.
+
+        :param font: font to be used in the blocks
+        :param line_thickness: thickness of the lines of the blocks
+        """
         super().__init__()
         self._font = font
         self._line_thickness = line_thickness
@@ -30,6 +36,7 @@ class BlockDiagramScene(QGraphicsScene):
     def update_layout(self, width: int, height: int) -> None:
         """
         This method is used to update the layout of the scene.
+
         :param width: new width of the scene
         :param height: new height of the scene
         :return: None
@@ -50,7 +57,6 @@ class BlockDiagramScene(QGraphicsScene):
         This method is used to fix the font size of the text in the blocks.
         It will make sure that the text fits inside the block and center the text in the block.
         All the blocks will have the same font size.
-        :return: None
         """
         biggest_text: ClassBlock = self._blocks[0]
 

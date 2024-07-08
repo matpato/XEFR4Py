@@ -2,7 +2,7 @@ import function
 import pandas
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QPushButton, QTableView, QSizePolicy, QSpacerItem
+from PyQt5.QtWidgets import QPushButton, QSizePolicy, QSpacerItem
 from pandas import DataFrame
 
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
@@ -21,7 +21,7 @@ FILE: str = f'{LOG_DIR}/calculate_weights_sampling.tsv'
 
 
 class CalculateWeightsSamplingPage(ChildPage):
-    _table_info: QTableView
+    _table_info: PandasTableView
 
     # List of buttons for each metric
     _metrics: list[QPushButton]

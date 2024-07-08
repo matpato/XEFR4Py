@@ -8,10 +8,6 @@ from eefr.knowledge_viewer.pages.implementations import *
 from eefr.knowledge_viewer.pages import BasePage
 from Utils import get_list_from_str
 
-"""
-This file is the main file for the knowledge viewer. 
-It creates the main window and the stacked widget to manage the pages.
-"""
 
 LOG_PATH: str = "../../logs"
 
@@ -23,6 +19,11 @@ BACKGROUND_COLOR: str = 'white'
 
 
 class KnowledgeViewerWindow(QMainWindow):
+    """
+    This file is the main file for the knowledge viewer.
+    It creates the main window and the stacked widget to manage the pages.
+    """
+
     _layout: QVBoxLayout
     _stacked_widget: QStackedWidget
 
@@ -33,6 +34,9 @@ class KnowledgeViewerWindow(QMainWindow):
     _get_n_random_rows_subsets: GetNRandomRowsSubsetsPage
 
     def __init__(self) -> None:
+        """
+        Constructor of the KnowledgeViewerWindow.
+        """
         super().__init__()
         # Set background color for the main window
         self.setStyleSheet(f'QMainWindow {{ background-color: {BACKGROUND_COLOR}; }}')
@@ -123,8 +127,8 @@ class KnowledgeViewerWindow(QMainWindow):
         """
         This function is called when the window is resized.
         It updates the margins of the layout based on the new window.
+
         :param event: QResizeEvent with the new window size
-        :return: None
         """
         # Update the margins based on the new window size
         window_width = event.size().width()
@@ -140,18 +144,26 @@ class KnowledgeViewerWindow(QMainWindow):
     def show_page(self, page: BasePage) -> None:
         """
         This function is called to switch to the specified page in the stacked widget.
+
         :param page: page to switch to
-        :return: None
         """
         # Switch to the specified page in the stacked widget
         index = self._stacked_widget.indexOf(page)
         self._stacked_widget.setCurrentIndex(index)
 
     def create_func(self, metric: MetricPage) -> function:
+        """
+        This function creates a function that switches to the specified metric page.
+
+        :param metric: metric page to switch to
+        """
         return lambda: self.show_page(metric)
 
 
 def launch_dashboard():
+    """
+    This function launches the knowledge viewer dashboard.
+    """
     app: QApplication = QApplication([])
     window: QMainWindow = KnowledgeViewerWindow()
     window.show()

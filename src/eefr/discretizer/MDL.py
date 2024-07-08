@@ -19,6 +19,7 @@ https://sci2s.ugr.es/keel/pdf/algorithm/congreso/fayyad1993.pdf
 def lnFunc(num: float) -> float:
     """
     Auxiliary function to calculate the entropy that calculates the Neper logarithm
+
     :param num: the number to calculate
     :return: the Neper log or 0 if we can't calculate the log
     """
@@ -27,30 +28,10 @@ def lnFunc(num: float) -> float:
     return num * math.log(num)
 
 
-# def entropy(array: np.array) -> float:
-#     """
-#     Calculate the entropy with Neper logarithm
-#     :param array: array to calculate the entropy
-#     :return: entropy of the array
-#     """
-#     # initialize the return value and the total
-#     returnValue: float = 0
-#     total: float = 0
-#
-#     # calculate the values
-#     for i in range(len(array)):
-#         returnValue -= lnFunc(array[i])
-#         total += array[i]
-#
-#     # return the entropy
-#     if total == 0:
-#         return 0
-#     return (returnValue + lnFunc(total)) / (total * LOG2)
-
-
 def entropy_conditioned_on_rows(matrix: np.array) -> float:
     """
     Calculate the conditioned entropy of the matrix
+
     :param matrix: matrix to calculate the conditioned entropy
     :return: conditioned entropy of the matrix
     """
@@ -78,6 +59,7 @@ def entropy_conditioned_on_rows(matrix: np.array) -> float:
 def entropy(array: np.array) -> float:
     """
     Calculate the entropy with Neper logarithm
+
     :param array: array to calculate the entropy
     :return: entropy of the array
     """
@@ -90,37 +72,12 @@ def entropy(array: np.array) -> float:
     # Calculate entropy
     nonzero_probabilities = probabilities[probabilities != 0]
     return -np.sum(nonzero_probabilities * np.log(nonzero_probabilities)) / LOG2
-#
-#
-# def entropy_conditioned_on_rows(matrix: np.array) -> float:
-#     """
-#     Calculate the conditioned entropy of the matrix
-#     :param matrix: matrix to calculate the conditioned entropy
-#     :return: conditioned entropy of the matrix
-#     """
-#     # initialize the return value and the total
-#     sumForRows: np.array = np.sum(matrix, axis=1)
-#     total: float = np.sum(sumForRows)
-#     # return the entropy
-#     if total == 0:
-#         return 0
-#
-#     # apply lnFunc for the rows
-#     nonzero_rows = sumForRows[sumForRows != 0]
-#     ln_rows = nonzero_rows * np.log(nonzero_rows)
-#
-#     # apply lnFunc for the matrix
-#     nonzero_matrix = matrix[matrix != 0]
-#     ln_matrix = nonzero_matrix * np.log(nonzero_matrix)
-#
-#     returnValue = np.sum(ln_matrix) - np.sum(ln_rows)
-#
-#     return -returnValue / (total * LOG2)
 
 
 def E(prior_counts: np.array, best_counts: np.array, num_instances: int, num_cut_points: int) -> bool:
     """
     Verification of the cut point based on the conditions used in the source article
+
     :param prior_counts: original counts of the classes
     :param best_counts: best counts of the classes
     :param num_instances: number of instances
@@ -160,6 +117,7 @@ def E(prior_counts: np.array, best_counts: np.array, num_instances: int, num_cut
 def cut_points_for_subset(sortedData: np.array, first: int, last_plus_one: int) -> np.array:
     """
     calculate the cut points of the passed subset
+
     :param sortedData: the class and attribute sorted by the attribute values
     :param first: first index of the subset to be considered
     :param last_plus_one: last index plus one of the subset to be considered
@@ -243,6 +201,7 @@ def cut_points_for_subset(sortedData: np.array, first: int, last_plus_one: int) 
 def MDL(x: list[float], y: list[float]) -> list[float]:
     """
     MDL - Fayyad and Irani - Supervised discretization method
+
     :param x: attribute to be discretized
     :param y: class to supervise the discretization
     :return: discretized attribute

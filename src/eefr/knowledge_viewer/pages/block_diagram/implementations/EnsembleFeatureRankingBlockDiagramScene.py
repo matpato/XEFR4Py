@@ -5,16 +5,17 @@ from eefr.knowledge_viewer.pages.block_diagram import ButtonClassBlock, Arrow, B
 from eefr.knowledge_viewer.pages.block_diagram.BlockDiagramScene import LINE_THICKNESS
 
 
-"""
-Class for the ensemble feature ranking block diagram.
-This class is a subclass of the BlockDiagramScene class.
-It contains the block diagram for the ensemble feature ranking.
-"""
 HORIZONTAL_CELLS: int = 5
 VERTICAL_CELLS: int = 3
 
 
 class EnsembleFeatureRankingBlockDiagramScene(BlockDiagramScene):
+    """
+    Class for the ensemble feature ranking block diagram.
+    This class is a subclass of the BlockDiagramScene class.
+    It contains the block diagram for the ensemble feature ranking.
+    """
+
     # Blocks
     _subsets: ButtonClassBlock
     _weights: ButtonClassBlock
@@ -25,6 +26,12 @@ class EnsembleFeatureRankingBlockDiagramScene(BlockDiagramScene):
     _arrow2: Arrow
 
     def __init__(self, font: QFont, line_thickness: int = LINE_THICKNESS):
+        """
+        Constructor for the EnsembleFeatureRankingBlockDiagramScene class.
+
+        :param font: the font to be used in the blocks
+        :param line_thickness: the thickness of the lines in the scene
+        """
         super().__init__(font, line_thickness)
 
         # Get the width and height of the scene
@@ -60,6 +67,7 @@ class EnsembleFeatureRankingBlockDiagramScene(BlockDiagramScene):
         """
         Update the layout of the scene. This method is called when the window is resized.
         It updates the position and size of the blocks and arrows.
+
         :param width: the new width of the scene
         :param height: the new height of the scene
         :return: None
@@ -84,6 +92,7 @@ class EnsembleFeatureRankingBlockDiagramScene(BlockDiagramScene):
     def inject_funcs(self, functions: list[function]) -> None:
         """
         Inject the functions into the clickable blocks.
+
         :param functions: the functions to be injected
         :return: None
         """

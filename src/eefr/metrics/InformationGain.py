@@ -16,6 +16,7 @@ class InformationGain(Enum):
 def entropy_helper(x: np.array) -> float:
     """
     Calculates the entropy of the column.
+
     :param x: column or table to calculate the entropy
     :return: entropy of the column
     """
@@ -36,6 +37,7 @@ def entropy_helper(x: np.array) -> float:
 def information_gain_body(data: pandas.DataFrame, metric: InformationGain) -> pandas.DataFrame:
     """
     Auxiliary method for the information gain methods
+
     :param data: dataset to calculate the metric
     :param metric: specify the information metric
     :return: return a dataset with the attribute importance
@@ -63,6 +65,7 @@ def information_gain_body(data: pandas.DataFrame, metric: InformationGain) -> pa
 def gain_ratio(data: pandas.DataFrame) -> pandas.DataFrame:
     """
     Calculate the gain ratio for the dataset
+
     :param data: dataset to use
     :return: gain ratio of the dataset
     """
@@ -72,6 +75,7 @@ def gain_ratio(data: pandas.DataFrame) -> pandas.DataFrame:
 def symmetrical_uncertainty(data: pandas.DataFrame) -> pandas.DataFrame:
     """
     Calculate the symmetrical uncertainty for the dataset
+
     :param data: dataset to use
     :return: symmetrical uncertainty of the dataset
     """

@@ -5,6 +5,7 @@ import pandas
 def chi_aux(class_data: np.array, w: np.array) -> np.float64:
     """
     Auxiliary method to simplify the calculation of the chi squared
+
     :param class_data: class values
     :param w: feature values
     :return: chi squared of the feature
@@ -33,6 +34,7 @@ def chi_aux(class_data: np.array, w: np.array) -> np.float64:
 def chi_squared(data: pandas.DataFrame) -> pandas.DataFrame:
     """
     Calculate the chi squared of the features
+
     :param data: dataset to calculate the chi squared of the features
     :return: chi squared of the features of the dataset
     """

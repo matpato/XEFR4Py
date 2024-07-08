@@ -18,6 +18,7 @@ LOGS_PATH: str = './logs/'
 def _generate_log_file(data: dict[str, Any], file_name: str) -> None:
     """
     Generate a log file with the data
+
     :param data: data to log
     :param file_name: file name
     """
@@ -28,13 +29,14 @@ def _generate_log_file(data: dict[str, Any], file_name: str) -> None:
 
 def _get_n_randoms_rows_subsets(n_rows: int, size: int, iterations: int, generate_logs: bool = True) -> list[list[int]]:
     """
-        Get N random row indexes subsets
-        :param n_rows: dataset number of rows
-        :param size: dataset partition number of rows
-        :param iterations: number of partitions (N)
-        :param generate_logs: generate logs for the Knowledge Viewer App, default value True
-        :return: N dataset row indexes partitions
-        """
+    Get N random row indexes subsets
+
+    :param n_rows: dataset number of rows
+    :param size: dataset partition number of rows
+    :param iterations: number of partitions (N)
+    :param generate_logs: generate logs for the Knowledge Viewer App, defaults to True
+    :return: N dataset row indexes partitions
+    """
     timer = datetime.datetime.now()
 
     randomRowsN: list[list[int]] = list()
@@ -55,6 +57,7 @@ def _calculate_weights_sampling(Y: pandas.Series, X: pandas.DataFrame, random_ro
                                 function_to_use: function, generate_logs: bool = True) -> pandas.DataFrame:
     """
     for each sample calculate feature weights based on functionTouse metrics
+
     :param Y: dataset class
     :param X: dataset features
     :param random_rows: N subset index rows
@@ -84,6 +87,7 @@ def _calculate_weights_sampling(Y: pandas.Series, X: pandas.DataFrame, random_ro
 def _apply_along_columns(function_to_use: function, array: list[list[int]], function_name: str) -> list[float]:
     """
     Apply a function to each column of a dataset
+
     :param function_to_use: function to apply
     :param array: random rows indexes
     :param function_name: function name to show in the log
@@ -111,6 +115,7 @@ def _apply_along_columns(function_to_use: function, array: list[list[int]], func
 def _cutoff_by_contrib(attrs: pandas.DataFrame, contrib: float = 1) -> list[str]:
     """
     Selects features with contribution > uniform contribution * contrib
+
     :param attrs: features weights
     :param contrib: selection factor close to 1, subsets all features with contribution > uniform contribution * contrib
     :return: list of features names, inverse ordered by its weights
@@ -136,6 +141,7 @@ def _calculate_rank_sampling(weights: pandas.DataFrame, features_names: list[str
                              cut_off: float = -1, generate_logs: bool = True) -> list[str]:
     """
     Calculate the rank of features based on the weights of each feature
+
     :param weights: weights of each feature
     :param features_names: features names to be ranked
     :param weight_per_group: weight per group of each rank
@@ -189,6 +195,10 @@ def _calculate_rank_sampling(weights: pandas.DataFrame, features_names: list[str
 
 
 class EEFR:
+    """
+    Enhanced Ensemble Features Ranking class that builds the object to calculate the features ranking with
+    method ensemble_features_ranking
+    """
     __Y: pandas.Series
     __X: pandas.DataFrame
 
@@ -198,6 +208,7 @@ class EEFR:
                  generate_logs: bool = True):
         """
         Takes a dataset to process
+
         :param dataset: dataset to process
         :param class_column: class column name
         :param blacklist_columns: list of columns to ignore
@@ -262,11 +273,11 @@ class EEFR:
                                   methods: list[Metric] = None) -> list[str]:
         """
         Outputs a features name list inversely ordered by relevance
+
         :param n_rows: number of rows per subset, default value 10
         :param n_tries: number of subsets, default value dataset rows/2
         :param cut_off: 0 (all features), k (k most ranked features), -1 (automatic k calculation), default value -1
-        :param methods: list of metrics to use, default value (gain_ratio, symmetrical_uncertainty, chi_squared,
-            random_forest_importance)
+        :param methods: list of metrics to use, default value (gain_ratio, symmetrical_uncertainty, chi_squared, random_forest_importance)
         :return: list of features names, inverse ordered by its weights
         """
         # timer for Knowledge Viewer App log
@@ -342,6 +353,7 @@ class EEFR:
     def get_total_features(self):
         """
         Get the number of features of the dataset
+
         :return: number of features of the dataset
         """
         return self.__X.shape[1]
@@ -349,6 +361,7 @@ class EEFR:
     def get_total_instances(self):
         """
         Get the number of instances of the dataset
+
         :return: number of instances of the dataset
         """
         return self.__X.shape[0]

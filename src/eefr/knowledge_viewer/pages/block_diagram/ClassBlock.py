@@ -4,11 +4,6 @@ from PyQt5.QtCore import Qt, QRectF
 from PyQt5.QtGui import QPen, QFont
 from PyQt5.QtWidgets import QGraphicsRectItem, QGraphicsTextItem
 
-"""
-This class is a QGraphicsRectItem that represents a class block in the diagram.
-It has a text item that represents the class name. 
-The text item is centered in the rectangle.
-"""
 
 # Default colors
 BRUSH_COLOR = Qt.white
@@ -16,6 +11,11 @@ PEN_COLOR = Qt.black
 
 
 class ClassBlock(QGraphicsRectItem):
+    """
+    This class is a QGraphicsRectItem that represents a class block in the diagram.
+    It has a text item that represents the class name.
+    The text item is centered in the rectangle.
+    """
     _text_item: QGraphicsTextItem
     _font: QFont
 
@@ -23,6 +23,17 @@ class ClassBlock(QGraphicsRectItem):
 
     def __init__(self, x: int, y: int, width: int, height: int, line_thickness: int, text: str = None,
                  font: QFont = None) -> None:
+        """
+        Constructor of the ClassBlock.
+
+        :param x: x position of the block
+        :param y: y position of the block
+        :param width: width of the block
+        :param height: height of the block
+        :param line_thickness: thickness of the lines of the block
+        :param text: text of the block
+        :param font: font of the text
+        """
         super().__init__(x, y, width, height)
 
         self._line_thickness = line_thickness
@@ -46,8 +57,8 @@ class ClassBlock(QGraphicsRectItem):
     def setRect(self, rect: QRectF) -> None:
         """
         Overload of the setRect method to accept a QRectF object
+
         :param rect: QRectF that represents the new rectangle
-        :return:
         """
         pass
 
@@ -56,26 +67,25 @@ class ClassBlock(QGraphicsRectItem):
     def setRect(self, x: float, y: float, width: float, height: float) -> None:
         """
         Overload of the setRect method to accept the x, y, width and height of the new rectangle
+
         :param x: x coordinate of the new rectangle
         :param y: y coordinate of the new rectangle
         :param width: width of the new rectangle
         :param height: height of the new rectangle
-        :return: None
         """
         pass
 
     def setRect(self, *args) -> None:
         """
         Base method to set the rectangle of the class block
+
         :param args: parameters expressed in the overloads
-        :return: None
         """
         super().setRect(*args)
 
     def align_text(self) -> None:
         """
         Aligns the text item to the center of the rectangle
-        :return: None
         """
         # Get the width and height of the text item
         text_width = self._text_item.boundingRect().width()
@@ -89,6 +99,7 @@ class ClassBlock(QGraphicsRectItem):
     def get_text_item(self) -> QGraphicsTextItem:
         """
         Returns the text item of the class block
+
         :return: QGraphicsTextItem text item
         """
         return self._text_item

@@ -5,19 +5,26 @@ import pandas as pd
 from PyQt5 import QtCore
 from PyQt5.QtCore import QModelIndex, Qt
 
-"""
-Pandas Model is an implementation of QAbstractTableModel for use with Pandas DataFrames.
-"""
-
 
 class PandasModel(QtCore.QAbstractTableModel):
+    """
+    Pandas Model is an implementation of QAbstractTableModel for use with Pandas DataFrames.
+    """
+
     def __init__(self, df=pd.DataFrame(), parent=None) -> None:
+        """
+        Constructor of the PandasModel
+
+        :param df: DataFrame to be used
+        :param parent: parent of the model
+        """
         QtCore.QAbstractTableModel.__init__(self, parent=parent)
         self._df = df
 
     def headerData(self, section: int, orientation: Qt.Orientation, role: int = Qt.DisplayRole) -> Any:
         """
         Get the header data for the model
+
         :param section: number of the section
         :param orientation: orientation of the header
         :param role: int role
@@ -41,6 +48,7 @@ class PandasModel(QtCore.QAbstractTableModel):
     def data(self, index: QModelIndex, role=Qt.DisplayRole) -> Any:
         """
         Get the data for the model
+
         :param index: index of the data
         :param role: role of the data
         :return: data of the index
@@ -56,6 +64,7 @@ class PandasModel(QtCore.QAbstractTableModel):
     def setData(self, index: QModelIndex, value: Any, role: int = Qt.DisplayRole) -> bool:
         """
         Set the data for the model
+
         :param index: index of the data
         :param value: value to set
         :param role: role of the data
@@ -77,6 +86,7 @@ class PandasModel(QtCore.QAbstractTableModel):
     def rowCount(self, parent: QModelIndex = QModelIndex()) -> int:
         """
         Get the row count of the model
+
         :param parent: parent index
         :return: row count
         """
@@ -85,6 +95,7 @@ class PandasModel(QtCore.QAbstractTableModel):
     def columnCount(self, parent: QModelIndex = QModelIndex()) -> int:
         """
         Get the column count of the model
+
         :param parent: parent index
         :return: column count
         """
@@ -93,6 +104,7 @@ class PandasModel(QtCore.QAbstractTableModel):
     def sort(self, column: int, order: Qt.SortOrder = Qt.DescendingOrder) -> None:
         """
         Sort the column by the passed order
+
         :param column: number of the column to sort
         :param order: order to sort
         :return: None

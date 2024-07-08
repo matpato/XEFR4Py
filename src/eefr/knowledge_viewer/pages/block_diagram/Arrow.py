@@ -6,14 +6,11 @@ from eefr.knowledge_viewer.pages.block_diagram.ClassBlock import ClassBlock
 
 LINE_THICKNESS: int = 3
 
-"""
-This class is used to draw an arrow between two class blocks.
-"""
-
 
 def get_line_pos(start_block: ClassBlock, end_block: ClassBlock) -> (int, int, int, int):
     """
     This function calculates the start and end points of the line between two class blocks.
+
     :param start_block: start class block
     :param end_block: end class block
     :return: points of the line
@@ -61,6 +58,7 @@ def get_line_pos(start_block: ClassBlock, end_block: ClassBlock) -> (int, int, i
 def get_tip_points(start_x: int, start_y: int, end_x: int, end_y: int, line_thickness) -> QPolygonF:
     """
     This function calculates the points of the arrowhead.
+
     :param start_x: x coordinate of the start point
     :param start_y: y coordinate of the start point
     :param end_x: x coordinate of the end point
@@ -98,11 +96,22 @@ def get_tip_points(start_x: int, start_y: int, end_x: int, end_y: int, line_thic
 
 
 class Arrow(QGraphicsLineItem):
+    """
+    This class is used to draw an arrow between two class blocks.
+    """
+
     # This class is used to draw an arrow between two class blocks.
     tip: QGraphicsPolygonItem
     line_thickness: int
 
     def __init__(self, start_block: ClassBlock, end_block: ClassBlock, line_thickness: int = LINE_THICKNESS):
+        """
+        Constructor of the arrow between two class blocks.
+
+        :param start_block: start class block
+        :param end_block: end class block
+        :param line_thickness: thickness of the line
+        """
         # calculate the start and end points of the line
         pos: (int, int, int, int) = get_line_pos(end_block, start_block)
         # draw the line
@@ -119,6 +128,7 @@ class Arrow(QGraphicsLineItem):
     def updateArrow(self, start_block: ClassBlock, end_block: ClassBlock) -> None:
         """
         This function updates the arrow between two class blocks.
+
         :param start_block: start class block
         :param end_block: end class block
         :return: None

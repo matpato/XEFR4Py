@@ -3,7 +3,7 @@ import mplcursors
 import pandas
 from PyQt5.QtCore import QMargins, Qt, QTimer
 from PyQt5.QtGui import QFont, QIcon
-from PyQt5.QtWidgets import QTableView, QSplitter, QPushButton, QLabel, QSpinBox, QHBoxLayout, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QSplitter, QPushButton, QLabel, QSpinBox, QHBoxLayout, QSpacerItem, QSizePolicy
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from pandas import DataFrame
@@ -36,7 +36,7 @@ RIGHT_BUTTON_ICON: str = f'{ICON_DIRECTORY}/right-button-icon.webp'
 
 
 class MetricPage(ChildPage):
-    _table_info: QTableView
+    _table_info: PandasTableView
     _diagrams: QSplitter
 
     # buttons to navigate through the diagrams of the iterations

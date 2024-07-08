@@ -14,6 +14,7 @@ LOG_INTERVAL = datetime.timedelta(seconds=30)
 def get_data_frame_from_formula(data: pandas.DataFrame) -> pandas.DataFrame:
     """
     Discretize non-numeric features
+
     :param data: dataset to discretize
     :return: discretized dataset
     """
@@ -27,6 +28,7 @@ def get_data_frame_from_formula(data: pandas.DataFrame) -> pandas.DataFrame:
 def discretize(data: pandas.DataFrame) -> pandas.DataFrame:
     """
     Discretize numeric features
+
     :param data: dataset to discretize
     :return: discretized dataset
     """
@@ -45,6 +47,7 @@ def discretize(data: pandas.DataFrame) -> pandas.DataFrame:
 def supervised_discretization(data: pandas.DataFrame) -> pandas.DataFrame:
     """
     supervised discretization of the features, removing tuples that don't have class
+
     :param data: dataset to discretize
     :return: discretized dataset without missing class values
     """
@@ -60,6 +63,7 @@ def supervised_discretization(data: pandas.DataFrame) -> pandas.DataFrame:
 def discretize_all(data: pandas.DataFrame) -> pandas.DataFrame:
     """
     Discretize all columns of the dataset
+
     :param data: dataset to discretize
     :return: discretized numeric dataset, without missing class values
     """

@@ -2,7 +2,6 @@ import function
 import pandas
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QTableView
 from pandas import DataFrame
 
 from eefr.knowledge_viewer.pages.block_diagram.implementations import EnsembleFeatureRankingBlockDiagramScene
@@ -21,7 +20,7 @@ FILE: str = f'{LOG_DIR}/EEFR.tsv'
 
 
 class EnsembleFeatureRankingPage(ChildPageWithBlockDiagram):
-    _table_info: QTableView
+    _table_info: PandasTableView
 
     def __init__(self, font: QFont, margins: QMargins, line_thickness: int, button_parent_func: function) -> None:
         blockDiagram: BlockDiagramScene = EnsembleFeatureRankingBlockDiagramScene(font, line_thickness)

@@ -4,17 +4,18 @@ from PyQt5.QtGui import QFont
 from eefr.knowledge_viewer.pages.block_diagram import ButtonClassBlock, Arrow, BlockDiagramScene
 from eefr.knowledge_viewer.pages.block_diagram.BlockDiagramScene import LINE_THICKNESS
 
-"""
-Class for the main block diagram.
-This class is a subclass of BlockDiagramScene.
-It contains the main block diagram.
-"""
 
 HORIZONTAL_CELLS: int = 3
 VERTICAL_CELLS: int = 3
 
 
 class MainBlockDiagramScene(BlockDiagramScene):
+    """
+    Class for the main block diagram.
+    This class is a subclass of BlockDiagramScene.
+    It contains the main block diagram.
+    """
+
     # Blocks
     _init: ButtonClassBlock
     _efr: ButtonClassBlock
@@ -53,6 +54,7 @@ class MainBlockDiagramScene(BlockDiagramScene):
         """
         Update the layout of the scene. This method is called when the window is resized.
         It updates the position and size of the blocks and arrows.
+
         :param width: the new width of the scene
         :param height: the new height of the scene
         :return: None
@@ -75,6 +77,7 @@ class MainBlockDiagramScene(BlockDiagramScene):
     def inject_funcs(self, functions: list[function]) -> None:
         """
         Inject the functions into the clickable blocks.
+
         :param functions: the functions to be injected
         :return: None
         """

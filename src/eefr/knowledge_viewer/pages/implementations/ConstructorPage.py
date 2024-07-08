@@ -2,7 +2,7 @@ import function
 import pandas
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QPushButton, QTableView, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QPushButton, QSpacerItem, QSizePolicy
 from pandas import DataFrame
 
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
@@ -19,7 +19,7 @@ FILE: str = f'{LOG_DIR}/constructor.tsv'
 
 
 class ConstructorPage(ChildPage):
-    _table_info: QTableView
+    _table_info: PandasTableView
 
     # button to navigate to the discretizer page
     _button_discretizer: QPushButton

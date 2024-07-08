@@ -2,11 +2,11 @@ import function
 import pandas
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QTableView, QSpacerItem, QSizePolicy
+from PyQt5.QtWidgets import QSpacerItem, QSizePolicy
 from pandas import DataFrame
 
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
-from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
+from eefr.knowledge_viewer.pages.table import PandasTableView
 
 """
 This class is a child page that displays the results of the get n random subsets.
@@ -19,7 +19,7 @@ FILE: str = f'{LOG_DIR}/get_n_randoms_rows_subsets.tsv'
 
 
 class GetNRandomRowsSubsetsPage(ChildPage):
-    _table_info: QTableView
+    _table_info: PandasTableView
 
     def __init__(self, font: QFont, margins: QMargins, button_parent_func: function):
         super().__init__(font, margins, 'Get N Random Rows Subsets', button_parent_func)

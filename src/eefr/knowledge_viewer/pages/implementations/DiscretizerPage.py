@@ -3,7 +3,6 @@ import mplcursors
 import pandas
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QTableView
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from pandas import DataFrame
@@ -18,7 +17,7 @@ It displays a table with the results and a histogram with the classes distributi
 
 
 class DiscretizerPage(ChildPage):
-    _table_info: QTableView
+    _table_info: PandasTableView
 
     def __init__(self, font: QFont, margins: QMargins, father_page: function):
         super().__init__(font, margins, 'Discretizer', father_page)
