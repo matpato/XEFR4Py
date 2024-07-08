@@ -1,16 +1,21 @@
-.. EEFR documentation master file, created by
-   sphinx-quickstart on Fri Oct  6 18:31:20 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Welcome to XEFR4Py's documentation!
+===================================
 
-Welcome to EEFR's documentation!
-================================
+XEFR4Py is a Python implementation of the algorithm EFR designed by Vitor. This algorithm implements a Ensemble Feature
+Ranking for big data.  This implementation is based in the original algorithm but adds some functionalities like
+explainability, class selection and black list of features.
+
+.. automodule:: eefr
+    :members:
+    :private-members:
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
+   discretizer.rst
+   knowledge_viewer.rst
+   metrics.rst
 
 Indices and tables
 ==================
@@ -18,7 +23,3 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-
-.. automodule:: EEFR
-   :members:
