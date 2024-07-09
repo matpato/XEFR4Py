@@ -7,6 +7,7 @@ from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from pandas import DataFrame
 
+from Utils import get_log_dir
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
 from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
 
@@ -15,6 +16,7 @@ This class is a child page that displays the results of the discretizer.
 It displays a table with the results and a histogram with the classes distribution.
 """
 
+LOG_DIR: str = get_log_dir()
 
 class DiscretizerPage(ChildPage):
     _table_info: PandasTableView
@@ -23,7 +25,7 @@ class DiscretizerPage(ChildPage):
         super().__init__(font, margins, 'Discretizer', father_page)
 
         # Load data
-        info: DataFrame = pandas.read_csv(f'../../logs/discretizer.tsv', sep='\t')
+        info: DataFrame = pandas.read_csv(f'{LOG_DIR}/discretizer.tsv', sep='\t')
 
         # Get classes and counts
         classes: list[str] = info['Classes'][0][1:-1].split()

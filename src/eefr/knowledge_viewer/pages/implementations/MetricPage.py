@@ -8,6 +8,7 @@ from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from pandas import DataFrame
 
+from Utils import get_log_dir
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
 from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
 
@@ -25,7 +26,7 @@ BAR_COLOR: str = 'tab:blue'
 
 FRAME_TIME: int = 1000  # milliseconds
 
-LOGS_DIRECTORY: str = '../../logs/'
+LOGS_DIRECTORY: str = get_log_dir()
 
 ICON_DIRECTORY: str = '../../../resources/icon/'
 PLAY_BUTTON_ICON: str = f'{ICON_DIRECTORY}/play-button-icon.webp'
@@ -248,8 +249,8 @@ class MetricPage(ChildPage):
         mplcursors.cursor(plt.gcf(), hover=2)
         mplcursors.cursor(plt.gcf()).connect("add", lambda sel: (
             sel.annotation.set_visible(False),
-            setattr(self, 'selected_column', sel.annotation.get_text().split('\n')[0].split('=')[1]
-                    if getattr(self, 'selected_column', NOT_SELECTECTED) != sel.annotation.get_text()
+            setattr(self, '_selected_column', sel.annotation.get_text().split('\n')[0].split('=')[1]
+                    if getattr(self, '_selected_column', NOT_SELECTECTED) != sel.annotation.get_text()
                     .split('\n')[0].split('=')[1] else NOT_SELECTECTED),
             self.update_diagrams(),
             self.start_animation()

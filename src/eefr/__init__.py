@@ -9,10 +9,11 @@ import pandas
 
 from eefr.discretizer import get_data_frame_from_formula, discretize_all
 from eefr.metrics import Metric
+from Utils import get_log_dir
 
 LOG_INTERVAL = datetime.timedelta(seconds=30)
 
-LOGS_PATH: str = './logs/'
+LOGS_PATH: str = get_log_dir()
 
 
 def _generate_log_file(data: dict[str, Any], file_name: str) -> None:
@@ -231,6 +232,10 @@ class EEFR:
         self.__Y = dataset[class_column]
         self.__X = dataset.drop(columns=blacklist_columns)
         self.__generate_logs = generate_logs
+
+        if os.path.exists(LOGS_PATH):
+            for file in os.listdir(LOGS_PATH):
+                os.remove(os.path.join(LOGS_PATH, file))
 
         logging.info("Dataset loaded")
         logging.info("Starting Discretization...")

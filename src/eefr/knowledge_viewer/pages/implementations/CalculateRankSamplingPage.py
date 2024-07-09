@@ -8,6 +8,7 @@ from matplotlib import pyplot as plt
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg
 from pandas import DataFrame
 
+from Utils import get_log_dir
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
 from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
 
@@ -18,7 +19,7 @@ Its possible to select the number of columns to display in the diagram.
 """
 
 # File paths to get the data to display
-LOG_DIR: str = '../../logs/'
+LOG_DIR: str = get_log_dir()
 FILE: str = f'{LOG_DIR}/calculate_rank_sampling.tsv'
 GRAPH_FILE: str = F'{LOG_DIR}/rank_sampling.tsv'
 

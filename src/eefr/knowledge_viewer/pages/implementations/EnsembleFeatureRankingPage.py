@@ -4,6 +4,7 @@ from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
 from pandas import DataFrame
 
+from Utils import get_log_dir
 from eefr.knowledge_viewer.pages.block_diagram.implementations import EnsembleFeatureRankingBlockDiagramScene
 from eefr.knowledge_viewer.pages.block_diagram import BlockDiagramView, BlockDiagramScene
 from eefr.knowledge_viewer.pages.table import PandasTableView
@@ -15,7 +16,7 @@ It displays a table with the execution time and the block diagram.
 """
 
 
-LOG_DIR: str = '../../logs/'
+LOG_DIR: str = get_log_dir()
 FILE: str = f'{LOG_DIR}/EEFR.tsv'
 
 

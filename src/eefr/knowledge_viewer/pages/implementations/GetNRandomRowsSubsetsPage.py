@@ -5,6 +5,7 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QSpacerItem, QSizePolicy
 from pandas import DataFrame
 
+from Utils import get_log_dir
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
 from eefr.knowledge_viewer.pages.table import PandasTableView
 
@@ -14,7 +15,7 @@ It shows a table with the results.
 """
 
 
-LOG_DIR: str = '../../logs/'
+LOG_DIR: str = get_log_dir()
 FILE: str = f'{LOG_DIR}/get_n_randoms_rows_subsets.tsv'
 
 

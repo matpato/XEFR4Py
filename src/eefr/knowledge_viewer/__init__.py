@@ -6,10 +6,10 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QStackedWidget, 
 
 from eefr.knowledge_viewer.pages.implementations import *
 from eefr.knowledge_viewer.pages import BasePage
-from Utils import get_list_from_str
+from Utils import get_list_from_str, get_log_dir
 
 
-LOG_PATH: str = "../../logs"
+LOG_PATH: str = get_log_dir()
 
 MARGIN_PERCENTAGE: float = 0.05
 
@@ -171,5 +171,6 @@ def launch_dashboard():
 
 
 if __name__ == '__main__':
+    print(LOG_PATH)
     launch_dashboard()
     print("Hello World")

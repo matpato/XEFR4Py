@@ -7,6 +7,7 @@ from pandas import DataFrame
 
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
 from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
+from Utils import get_log_dir
 
 """
 This class is a child page that displays the results of the constructor.
@@ -14,7 +15,7 @@ It displays a table with the results and a button to navigate to the discretizer
 """
 
 
-LOG_DIR: str = '../../logs/'
+LOG_DIR: str = get_log_dir()
 FILE: str = f'{LOG_DIR}/constructor.tsv'
 
 

@@ -7,7 +7,7 @@ from pandas import DataFrame
 
 from eefr.knowledge_viewer.pages.ChildPage import ChildPage
 from eefr.knowledge_viewer.pages.table.PandasTableView import PandasTableView
-from Utils import get_list_from_str
+from Utils import get_list_from_str, get_log_dir
 
 """
 This class is a child page that displays the results of the weights sampling calculation.
@@ -16,7 +16,7 @@ It displays a table with the results and a button for each metric to display the
 
 
 # File path to get the data to display
-LOG_DIR: str = '../../logs/'
+LOG_DIR: str = get_log_dir()
 FILE: str = f'{LOG_DIR}/calculate_weights_sampling.tsv'
 
 
