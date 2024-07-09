@@ -32,4 +32,4 @@ def get_log_dir() -> str:
         appdata = home / ".local/share"
     elif sys.platform == "darwin":
         appdata = home / "Library/Application Support"
-    return str(appdata / 'logs')
+    return str(appdata / 'xefr4py_logs')
