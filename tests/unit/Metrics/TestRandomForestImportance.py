@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import pandas
 
-from eefr.metrics import r_forest_importance2
+from xefr4py.metrics import r_forest_importance2
 
 
 class TestRandomForestImportance(unittest.TestCase):

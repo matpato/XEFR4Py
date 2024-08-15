@@ -4,7 +4,7 @@ import numpy as np
 import pandas
 from pandas.core.dtypes.common import is_integer_dtype
 
-from eefr.discretizer.__init__ import get_data_frame_from_formula, discretize, supervised_discretization, discretize_all
+from xefr4py.discretizer.__init__ import get_data_frame_from_formula, discretize, supervised_discretization, discretize_all
 
 
 class TestDiscretizer(unittest.TestCase):

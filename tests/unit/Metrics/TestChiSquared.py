@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import pandas
 
-from eefr.metrics.ChiSquared import chi_aux, chi_squared
+from xefr4py.metrics.ChiSquared import chi_aux, chi_squared
 
 
 class TestChiSquared(unittest.TestCase):

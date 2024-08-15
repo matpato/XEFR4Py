@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import pandas
 
-from eefr import _get_n_randoms_rows_subsets, _calculate_weights_sampling, Metric, _cutoff_by_contrib, \
+from xefr4py import _get_n_randoms_rows_subsets, _calculate_weights_sampling, Metric, _cutoff_by_contrib, \
     calculate_rank_sampling, EEFR
 
 

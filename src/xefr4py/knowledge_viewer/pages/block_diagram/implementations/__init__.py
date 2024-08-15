@@ -1,0 +1,3 @@
+from xefr4py.knowledge_viewer.pages.block_diagram.implementations.EnsembleFeatureRankingBlockDiagramScene import \
+    EnsembleFeatureRankingBlockDiagramScene
+from xefr4py.knowledge_viewer.pages.block_diagram.implementations.MainBlockDiagramScene import MainBlockDiagramScene

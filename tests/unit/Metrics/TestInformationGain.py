@@ -3,7 +3,7 @@ import unittest
 import numpy as np
 import pandas
 
-from eefr.metrics.InformationGain import entropy_helper, gain_ratio, symmetrical_uncertainty
+from xefr4py.metrics.InformationGain import entropy_helper, gain_ratio, symmetrical_uncertainty
 
 
 class TestInformationGain(unittest.TestCase):
