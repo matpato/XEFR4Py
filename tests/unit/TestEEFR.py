@@ -4,7 +4,7 @@ import numpy as np
 import pandas
 
 from xefr4py import _get_n_randoms_rows_subsets, _calculate_weights_sampling, Metric, _cutoff_by_contrib, \
-    calculate_rank_sampling, EEFR
+    _calculate_rank_sampling, EEFR
 
 
 class TestEEFR(unittest.TestCase):
@@ -54,25 +54,25 @@ class TestEEFR(unittest.TestCase):
         n: int = weights.shape[0]
         weightPerGroup: [int] = range(n, 0, -1)
         weightPerGroup = [int(x * (x ** 0.5) / (n ** 0.5)) for x in weightPerGroup]
-        ranking: list[str] = calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, -1)
+        ranking: list[str] = _calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, -1)
         self.assertEqual(['a'], ranking)
 
-        ranking = calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 0)
+        ranking = _calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 0)
         self.assertEqual(['a', 'c', 'b'], ranking)
 
-        ranking = calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 1)
+        ranking = _calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 1)
         self.assertEqual(['a'], ranking)
 
-        ranking = calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 2)
+        ranking = _calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 2)
         self.assertEqual(['a', 'c'], ranking)
 
-        ranking = calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 3)
+        ranking = _calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 3)
         self.assertEqual(['a', 'c', 'b'], ranking)
 
-        ranking = calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 5)
+        ranking = _calculate_rank_sampling(weights, list(weights.columns), weightPerGroup, 5)
         self.assertEqual(['a', 'c', 'b'], ranking)
 
-        ranking = calculate_rank_sampling(weights, list(weights.columns), weightPerGroup)
+        ranking = _calculate_rank_sampling(weights, list(weights.columns), weightPerGroup)
         self.assertEqual(['a'], ranking)
 
     def test_ensemble_features_ranking(self):
