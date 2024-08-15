@@ -2,12 +2,13 @@ import function
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QPushButton
+from importlib import resources as pkg_resources
 
 from eefr.knowledge_viewer.pages.BasePage import BasePage
 
 
-ICON_DIRECTORY: str = '../../../resources/icon/'
-LEFT_BUTTON_ICON: str = f'{ICON_DIRECTORY}/left-button-icon.webp'
+ICON_DIRECTORY: str = 'resources.icons'
+LEFT_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'left-button-icon.webp'))
 
 
 class ChildPage(BasePage):

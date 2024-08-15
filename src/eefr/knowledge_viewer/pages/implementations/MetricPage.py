@@ -1,6 +1,7 @@
 import function
 import mplcursors
 import pandas
+import importlib.resources as pkg_resources
 from PyQt5.QtCore import QMargins, Qt, QTimer
 from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QSplitter, QPushButton, QLabel, QSpinBox, QHBoxLayout, QSpacerItem, QSizePolicy
@@ -28,12 +29,12 @@ FRAME_TIME: int = 1000  # milliseconds
 
 LOGS_DIRECTORY: str = get_log_dir()
 
-ICON_DIRECTORY: str = '../../../resources/icon/'
-PLAY_BUTTON_ICON: str = f'{ICON_DIRECTORY}/play-button-icon.webp'
-PAUSE_BUTTON_ICON: str = f'{ICON_DIRECTORY}/pause-button-icon.webp'
-STOP_BUTTON_ICON: str = f'{ICON_DIRECTORY}/stop-button-icon-2.webp'
-LEFT_BUTTON_ICON: str = f'{ICON_DIRECTORY}/left-button-icon.webp'
-RIGHT_BUTTON_ICON: str = f'{ICON_DIRECTORY}/right-button-icon.webp'
+ICON_DIRECTORY: str = "resources.icons"
+PLAY_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'play-button-icon.webp'))
+PAUSE_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'pause-button-icon.webp'))
+STOP_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'stop-button-icon-2.webp'))
+LEFT_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'left-button-icon.webp'))
+RIGHT_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'right-button-icon.webp'))
 
 
 class MetricPage(ChildPage):
@@ -250,7 +251,7 @@ class MetricPage(ChildPage):
         mplcursors.cursor(plt.gcf()).connect("add", lambda sel: (
             sel.annotation.set_visible(False),
             setattr(self, '_selected_column', sel.annotation.get_text().split('\n')[0].split('=')[1]
-                    if getattr(self, '_selected_column', NOT_SELECTECTED) != sel.annotation.get_text()
+            if getattr(self, '_selected_column', NOT_SELECTECTED) != sel.annotation.get_text()
                     .split('\n')[0].split('=')[1] else NOT_SELECTECTED),
             self.update_diagrams(),
             self.start_animation()
