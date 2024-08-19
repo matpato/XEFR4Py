@@ -1,15 +1,16 @@
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
 
 [project]
-name = "XEFR"
-version = "0.0.1"
+name = "XEFR4Py"
+version = "0.1.7"
 authors = [
 	{ name="Matilde Pós-de-Mina Pato", email="matilde.pato@isel.pt"},
+    { name="Nuno Datia", email="nuno.datia@isel.pt"},
     { name="Diogo Amorim", email="a47248@alunos.isel.pt"},
 ]
-description = "A package for big data"
+description = "A Python package that implements a Ensemble Feature Ranking(EFR) algorithm with a dashboard for visual analisys of the algorithm evolution"
 readme = "README.md"
 requires-python = ">=3.10"
 classifiers = [
@@ -18,5 +19,18 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 
+license = {file="LICENSE"}
+dynamic = ["dependencies"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"resources/icons" = "xefr4py/resources/icons"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+
 [project.urls]
 "Homepage" = "https://github.com/matpato/XEFR4Py"
+
+# pypi test API key
+# pypi-AgENdGVzdC5weXBpLm9yZwIkZGQyNjk3MTgtMDI4ZS00M2QzLWJjYmUtZjMyZTJkOGFjMmI3AAIqWzMsImI5Y2QyYzc1LTQxMzgtNDVlZS1iYjA4LWNiMTgzOTI5N2E5MyJdAAAGILbw9GzGNtgsdJxY0VEqMqum73mKS5VX8o7math41bOH
