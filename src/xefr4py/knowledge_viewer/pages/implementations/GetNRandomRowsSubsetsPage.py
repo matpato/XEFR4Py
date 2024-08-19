@@ -5,7 +5,7 @@ from PyQt5.QtGui import QFont
 from PyQt5.QtWidgets import QSpacerItem, QSizePolicy
 from pandas import DataFrame
 
-from Utils import get_log_dir
+from xefr4py.Utils import get_log_dir
 from xefr4py.knowledge_viewer.pages.ChildPage import ChildPage
 from xefr4py.knowledge_viewer.pages.table import PandasTableView
 

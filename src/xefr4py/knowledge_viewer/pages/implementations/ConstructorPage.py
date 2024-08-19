@@ -7,7 +7,7 @@ from pandas import DataFrame
 
 from xefr4py.knowledge_viewer.pages.ChildPage import ChildPage
 from xefr4py.knowledge_viewer.pages.table.PandasTableView import PandasTableView
-from Utils import get_log_dir
+from xefr4py.Utils import get_log_dir
 
 """
 This class is a child page that displays the results of the constructor.

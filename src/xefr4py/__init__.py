@@ -9,7 +9,7 @@ import pandas
 
 from xefr4py.discretizer import get_data_frame_from_formula, discretize_all
 from xefr4py.metrics import Metric
-from Utils import get_log_dir
+from xefr4py.Utils import get_log_dir
 
 LOG_INTERVAL = datetime.timedelta(seconds=30)
 
@@ -275,22 +275,22 @@ class EEFR:
                                 }, 'constructor')
 
     def ensemble_features_ranking(self, n_rows: int = None, n_tries: int = 10, cut_off: int = -1,
-                                  methods: list[Metric] = None) -> list[str]:
+                                  metrics: list[Metric] = None) -> list[str]:
         """
         Outputs a features name list inversely ordered by relevance
 
         :param n_rows: number of rows per subset, default value 10
         :param n_tries: number of subsets, default value dataset rows/2
         :param cut_off: 0 (all features), k (k most ranked features), -1 (automatic k calculation), default value -1
-        :param methods: list of metrics to use, default value (gain_ratio, symmetrical_uncertainty, chi_squared, random_forest_importance)
+        :param metrics: list of metrics to use, default value (gain_ratio, symmetrical_uncertainty, chi_squared, random_forest_importance)
         :return: list of features names, inverse ordered by its weights
         """
         # timer for Knowledge Viewer App log
         eefr_timer = datetime.datetime.now()
 
         # process the parameters to use the default values
-        if methods is None:
-            methods = [Metric.GAIN_RATIO, Metric.SYMMETRICAL_UNCERTAINTY, Metric.CHI_SQUARED,
+        if metrics is None:
+            metrics = [Metric.GAIN_RATIO, Metric.SYMMETRICAL_UNCERTAINTY, Metric.CHI_SQUARED,
                        Metric.RANDOM_FOREST_IMPORTANCE]
         if n_rows is None:
             n_rows = int(self.get_total_instances() / 2)
@@ -311,12 +311,12 @@ class EEFR:
         metrics_timer = datetime.datetime.now()
 
         weights: list[pandas.DataFrame] = list()
-        for i in range(len(methods)):
-            method: Metric = methods[i]
+        for i in range(len(metrics)):
+            method: Metric = metrics[i]
             # timer for Knowledge Viewer App log
             method_timer = datetime.datetime.now()
             logging.info(
-                f"Calculating weights for metric: {method.__name__.replace('_', ' ')} ({i + 1}/{len(methods)})")
+                f"Calculating weights for metric: {method.__name__.replace('_', ' ')} ({i + 1}/{len(metrics)})")
             weights.append(_calculate_weights_sampling(self.__Y, self.__X, random_rows_n, method, self.__generate_logs))
 
             # Log for Knowledge Viewer App
@@ -326,7 +326,7 @@ class EEFR:
 
         # Log for Knowledge Viewer App
         if self.__generate_logs:
-            _generate_log_file({'Metrics': [method.__name__.replace('_', ' ') for method in methods],
+            _generate_log_file({'Metrics': [method.__name__.replace('_', ' ') for method in metrics],
                                'Execution Time': datetime.datetime.now() - metrics_timer},
                               'calculate_weights_sampling')
 

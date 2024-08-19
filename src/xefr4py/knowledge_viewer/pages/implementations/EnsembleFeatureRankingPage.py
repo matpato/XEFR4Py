@@ -4,7 +4,7 @@ from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont
 from pandas import DataFrame
 
-from Utils import get_log_dir
+from xefr4py.Utils import get_log_dir
 from xefr4py.knowledge_viewer.pages.block_diagram.implementations import EnsembleFeatureRankingBlockDiagramScene
 from xefr4py.knowledge_viewer.pages.block_diagram import BlockDiagramView, BlockDiagramScene
 from xefr4py.knowledge_viewer.pages.table import PandasTableView

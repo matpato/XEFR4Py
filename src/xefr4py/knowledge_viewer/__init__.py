@@ -6,7 +6,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget, QStackedWidget, 
 
 from xefr4py.knowledge_viewer.pages.implementations import *
 from xefr4py.knowledge_viewer.pages import BasePage
-from Utils import get_list_from_str, get_log_dir
+from  xefr4py.Utils import get_list_from_str, get_log_dir
 
 
 LOG_PATH: str = get_log_dir()
