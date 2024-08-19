@@ -82,7 +82,7 @@ class TestEEFR(unittest.TestCase):
         eEFR: EEFR = EEFR(data)
         nRows: int = int(len(data) / 2)
         methods: list[Metric] = [Metric.GAIN_RATIO, Metric.CHI_SQUARED]
-        features: list[str] = eEFR.ensemble_features_ranking(n_rows=nRows, n_tries=20, cut_off=-1, methods=methods)
+        features: list[str] = eEFR.ensemble_features_ranking(n_rows=nRows, n_tries=20, cut_off=-1, metrics=methods)
         self.assertEqual(['b'], features)
 
     def test_ensemble_features_ranking_with_blacklist(self):
@@ -92,7 +92,7 @@ class TestEEFR(unittest.TestCase):
         eEFR: EEFR = EEFR(data, blacklist_columns=['b'])
         nRows: int = int(len(data) / 2)
         methods: list[Metric] = [Metric.GAIN_RATIO, Metric.CHI_SQUARED]
-        features: list[str] = eEFR.ensemble_features_ranking(n_rows=nRows, n_tries=20, cut_off=-1, methods=methods)
+        features: list[str] = eEFR.ensemble_features_ranking(n_rows=nRows, n_tries=20, cut_off=-1, metrics=methods)
         self.assertEqual(['c'], features)
 
     def test_ensemble_features_ranking_with_class_selection(self):
@@ -102,7 +102,7 @@ class TestEEFR(unittest.TestCase):
         eEFR: EEFR = EEFR(data, class_column='a')
         nRows: int = int(len(data) / 2)
         methods: list[Metric] = [Metric.GAIN_RATIO, Metric.CHI_SQUARED]
-        features: list[str] = eEFR.ensemble_features_ranking(n_rows=nRows, n_tries=20, cut_off=-1, methods=methods)
+        features: list[str] = eEFR.ensemble_features_ranking(n_rows=nRows, n_tries=20, cut_off=-1, metrics=methods)
         self.assertEqual(['b'], features)
 
 
