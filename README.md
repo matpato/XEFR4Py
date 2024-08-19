@@ -158,16 +158,15 @@ Code snippet to test the library and dashboard:
 ```python
 from pandas import DataFrame
 import pandas as pd
-from xefr4py.KnowledgeViewer import launch_dashboard
-from xefr4py import Metrics
-import xefr4py
+from xefr4py.knowledge_viewer import launch_dashboard
+from xefr4py import Metric, EEFR
 
 if __name__ == '__main__':
     dataset: DataFrame = pd.read_csv(
         'https://raw.githubusercontent.com/matpato/XEFR4Py/main/data/allDataArceneTrain.txt',
         sep=' ')  # update this link
-    features: list[str] = xefr4py(dataset).ensemble_features_ranking(metrics=[Metrics.CHI_SQUARED])
-    print(features)  # output should be like: ['F.7888', 'F.7564', 'F.3986', 'F.8051', 'F.158', 'F.1455', ...]
+    features: list[str] = EEFR(dataset).ensemble_features_ranking(metrics=[Metric.CHI_SQUARED])
+    print(features)     # output should be like: ['F.7888', 'F.7564', 'F.3986', 'F.8051', 'F.158', 'F.1455', ...]
 
     launch_dashboard()  # launch the dashboard
 ```
