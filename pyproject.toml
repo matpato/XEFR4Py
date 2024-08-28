@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "XEFR4Py"
-version = "0.1.7"
+version = "0.1.8"
 authors = [
 	{ name="Matilde Pós-de-Mina Pato", email="matilde.pato@isel.pt"},
     { name="Nuno Datia", email="nuno.datia@isel.pt"},
@@ -31,6 +31,8 @@ files = ["requirements.txt"]
 
 [project.urls]
 "Homepage" = "https://github.com/matpato/XEFR4Py"
+"Issues" = "https://github.com/matpato/XEFR4Py/issues"
+"Documentation" = "https://readthedocs.com/project/xefr4py"
 
 # pypi test API key
 # pypi-AgENdGVzdC5weXBpLm9yZwIkZGQyNjk3MTgtMDI4ZS00M2QzLWJjYmUtZjMyZTJkOGFjMmI3AAIqWzMsImI5Y2QyYzc1LTQxMzgtNDVlZS1iYjA4LWNiMTgzOTI5N2E5MyJdAAAGILbw9GzGNtgsdJxY0VEqMqum73mKS5VX8o7math41bOH

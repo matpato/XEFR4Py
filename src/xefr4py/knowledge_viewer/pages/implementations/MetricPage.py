@@ -1,3 +1,5 @@
+from importlib.abc import Traversable
+
 import function
 import mplcursors
 import pandas
@@ -29,12 +31,16 @@ FRAME_TIME: int = 1000  # milliseconds
 
 LOGS_DIRECTORY: str = get_log_dir()
 
-ICON_DIRECTORY: str = "resources.icons"
-PLAY_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'play-button-icon.webp'))
-PAUSE_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'pause-button-icon.webp'))
-STOP_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'stop-button-icon-2.webp'))
-LEFT_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'left-button-icon.webp'))
-RIGHT_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'right-button-icon.webp'))
+PACKAGE_NAME: str = 'xefr4py'
+ICONS_DIRECTORY: str = 'resources/icons'
+
+ICONS: Traversable = pkg_resources.files(PACKAGE_NAME).joinpath(ICONS_DIRECTORY)
+
+PLAY_BUTTON_ICON: str = str(ICONS.joinpath('play-button-icon.webp'))
+PAUSE_BUTTON_ICON: str = str(ICONS.joinpath('pause-button-icon.webp'))
+STOP_BUTTON_ICON: str = str(ICONS.joinpath('stop-button-icon-2.webp'))
+LEFT_BUTTON_ICON: str = str(ICONS.joinpath('left-button-icon.webp'))
+RIGHT_BUTTON_ICON: str = str(ICONS.joinpath('right-button-icon.webp'))
 
 
 class MetricPage(ChildPage):

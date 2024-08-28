@@ -1,3 +1,5 @@
+from importlib.abc import Traversable
+
 import function
 from PyQt5.QtCore import QMargins
 from PyQt5.QtGui import QFont, QIcon
@@ -7,8 +9,12 @@ from importlib import resources as pkg_resources
 from xefr4py.knowledge_viewer.pages.BasePage import BasePage
 
 
-ICON_DIRECTORY: str = 'resources.icons'
-LEFT_BUTTON_ICON: str = str(pkg_resources.path(ICON_DIRECTORY, 'left-button-icon.webp'))
+PACKAGE_NAME: str = 'xefr4py'
+ICONS_DIRECTORY: str = 'resources/icons'
+
+ICONS: Traversable = pkg_resources.files(PACKAGE_NAME).joinpath(ICONS_DIRECTORY)
+
+LEFT_BUTTON_ICON: str = str(ICONS.joinpath('left-button-icon.webp'))
 
 
 class ChildPage(BasePage):
