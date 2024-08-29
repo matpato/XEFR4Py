@@ -32,7 +32,7 @@ files = ["requirements.txt"]
 [project.urls]
 "Homepage" = "https://github.com/matpato/XEFR4Py"
 "Issues" = "https://github.com/matpato/XEFR4Py/issues"
-"Documentation" = "https://readthedocs.com/project/xefr4py "
+"Documentation" = "https://xefr4py.readthedocs.io/en/latest/"
 
 # pypi test API key
 # pypi-AgENdGVzdC5weXBpLm9yZwIkZGQyNjk3MTgtMDI4ZS00M2QzLWJjYmUtZjMyZTJkOGFjMmI3AAIqWzMsImI5Y2QyYzc1LTQxMzgtNDVlZS1iYjA4LWNiMTgzOTI5N2E5MyJdAAAGILbw9GzGNtgsdJxY0VEqMqum73mKS5VX8o7math41bOH
