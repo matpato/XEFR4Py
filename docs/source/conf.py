@@ -14,16 +14,13 @@ release = 'v 1.0'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ['sphinx.ext.napoleon', 'sphinx.ext.autodoc', 'sphinx.ext.coverage']
+extensions = ['autoapi.extension']
+
+autoapi_dirs = ['../../src/xefr4py']
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-import os
-import sys
-
-sys.path.insert(0, os.path.abspath('../..'))
-sys.path.insert(0, os.path.abspath('../../src'))
 
 
 
