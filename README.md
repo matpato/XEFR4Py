@@ -22,8 +22,6 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div>
-
 <div style="display: flex; align-items: center;">
     <!-- Image Section -->
     <div style="flex: 35%; text-align: left;">
