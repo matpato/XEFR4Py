@@ -24,18 +24,18 @@
 <br />
 <div>
 
-<p align="left">
-    <a href="https://isel.pt" target="_blank">
-        <img width="35%" src="https://www.isel.pt/sites/default/files/SCI/Identidade/logo_ISEL_simplificado_cor.png" alt="ISEL logo">
-    </a>
+<div style="display: flex; align-items: center;">
+    <!-- Image Section -->
+    <div style="flex: 35%; text-align: left;">
+        <a href="https://isel.pt" target="_blank">
+            <img width="100%" src="https://www.isel.pt/sites/default/files/SCI/Identidade/logo_ISEL_simplificado_cor.png" alt="ISEL logo">
+        </a>
+    </div>
 
-<h3 align="center">eXplainable Ensemble Feature Ranking</h3>
-
-[//]: # (  <p align="center">)
-
-[//]: # (    Validate API's Continuously with RapiTest!)
-
-[//]: # (  </p>)
+    <!-- Text Section -->
+    <div style="flex: 65%; text-align: center;">
+        <h3>eXplainable Ensemble Feature Ranking</h3>
+    </div>
 </div>
 
 
