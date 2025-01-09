@@ -24,7 +24,7 @@
 <br />
 <div style="display: flex; align-items: center;">
     <!-- Image Section -->
-    <div style="flex: 1; text-align: left;">
+    <div style="flex: 1;">
         <a href="https://isel.pt" target="_blank">
             <img src="https://www.isel.pt/sites/default/files/SCI/Identidade/logo_ISEL_simplificado_cor.png" alt="ISEL logo" style="width: 120px; height: auto;">
         </a>
