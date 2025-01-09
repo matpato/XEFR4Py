@@ -22,17 +22,17 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<div style="display: flex; align-items: center; justify-content: flex-start;">
+<div style="display: flex; align-items: center;">
     <!-- Image Section -->
-    <div style="margin-right: 20px;">
+    <div style="flex: 1; text-align: left;">
         <a href="https://isel.pt" target="_blank">
-            <img src="https://www.isel.pt/sites/default/files/SCI/Identidade/logo_ISEL_simplificado_cor.png" alt="ISEL logo" style="max-width: 150px;">
+            <img src="https://www.isel.pt/sites/default/files/SCI/Identidade/logo_ISEL_simplificado_cor.png" alt="ISEL logo" style="width: 120px; height: auto;">
         </a>
     </div>
 
     <!-- Text Section -->
-    <div>
-        <h3 style="margin: 0;">eXplainable Ensemble Feature Ranking</h3>
+    <div style="flex: 3; text-align: left; padding-left: 20px;">
+        <h3>eXplainable Ensemble Feature Ranking</h3>
     </div>
 </div>
 
