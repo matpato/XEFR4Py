@@ -24,9 +24,10 @@
 <br />
 <div>
 
-[//]: # (  <a href="https://github.com/DuarteFelicio/RAPITest">)
-[//]: # (    <img src="images/logo.png" alt="Logo" width="80" height="80">)
-[//]: # (  </a>)
+<p align="left">
+    <a href="https://isel.pt" target="_blank">
+        <img width="35%" src="https://www.isel.pt/sites/default/files/SCI/Identidade/logo_ISEL_simplificado_cor.png" alt="ISEL logo">
+    </a>
 
 <h3 align="center">eXplainable Ensemble Feature Ranking</h3>
 
